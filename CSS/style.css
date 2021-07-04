@@ -6,3 +6,316 @@
 body {
     font-family: sans-serif;
 }
+/* Small Screen */
+@media (min-width: 767px) {
+    .container {
+        max-width: 750px;
+    }
+}
+/* Medium Screen */
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+}
+/* Large Screen */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+.container {
+    margin: 0 auto;
+    padding: 0 25px;
+}
+ul {
+    list-style: none;
+}
+/* Start Header */
+.header {
+    padding: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.header .logo {
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+}
+.header .nav ul {
+    display: flex;
+}
+.header .nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    display: block;
+    margin-left: 5px;
+    padding: 10px 10px 15px 10px;
+    font-size: 15px;
+    position: relative;
+    transition: .3s;
+}
+.header .nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: .4s;
+    opacity: 0;
+}
+.header .nav ul li a:hover::before {
+    width: 100%;
+    opacity: 1;
+}
+@media (max-width: 991px) {
+    .bar {
+        display: flex;
+        flex-flow: row-reverse wrap;
+        width: 30px;
+        cursor: pointer;
+    }
+    .bar span {
+        height: 2px;
+        background: #fff;
+        margin-bottom: 5px;
+    }
+    .bar span:first-child {
+        width: 100%;
+    }
+    .bar span:nth-child(2) {
+        width: 60%;
+        transition: .3s;
+    }
+    .bar:hover span:nth-child(2) {
+        width: 100%;
+    }
+    .bar span:last-child {
+        width: 100%;
+    }
+}
+@media (max-width: 991px) {
+    .header .nav ul {
+        display: none;
+    }
+    .header .nav .bar:hover + ul {
+        display: block;
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 50px);
+        background: #202020;
+    }
+    .header .nav ul li a::before {
+        display: none;
+    }
+    .header .nav ul li {
+        border-bottom: 1px solid #2c2c2c;
+    }
+    .header .nav ul li a {
+        padding: 10px;
+        margin: 0;
+    }
+    .header .nav ul li a:hover {
+        background: #2c2c2c;
+    }
+}
+/* End Header */
+/* Start Landing */
+.landing {
+    position: relative;
+    background: url(../images/slider/1.jpg);
+    background-size: cover;
+    height: 100vh;
+    border: 1px solid #777;
+}
+.landing::before,
+.landing::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.landing::before {
+    background: url(../images/pattern.png);
+}
+.landing::after {
+    background: rgb(0, 0, 0, 45%);
+}
+.landing .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 2;
+}
+.landing .text h2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+.landing .text h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.landing .text a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: fit-content;
+    padding: 8px 45px;
+    margin: 0 auto;
+    border-radius: 25px;
+    border: 2px solid #fff;
+    transition: .3s;
+}
+.landing .text a:hover {
+    background: #fff;
+    color: #444444;
+}
+.landing .shufflle {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.landing .shufflle li {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.493);
+    border-radius: 50%;
+    margin: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+.landing .shufflle li.active,
+.landing .shufflle li:hover {
+    background: #fff;
+}
+/* End Landing */
+/* Start About */
+.about {
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+.about .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.about .box {
+    display: flex;
+    margin-bottom: 60px;
+}
+@media (min-width: 992px) {
+    .about .box {
+        width: calc(100% / 3);
+    }
+}
+@media (max-width: 991px) {
+    .about .box {
+        width: calc(100% / 2);
+    }
+}
+@media (max-width: 768px) {
+    .about .box {
+        width: 100%;
+    }
+}
+.about .box i {
+    margin-right: 25px;
+}
+.about .box .text h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.about .box .text p {
+    font-size: 14px;
+    color: #727272;
+    line-height: 1.8;
+}
+/* End About */
+/* Start Parallax */
+.parallax {
+    background: url(../images/parallax/facts.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+.parallax::before,
+.parallax::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.parallax::before {
+    background: url(../images/pattern.png);
+}
+.parallax::after {
+    background: rgba(0, 0, 0, 45%);
+}
+.parallax .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.parallax .box {
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
+@media (min-width: 991px) {
+    .parallax .box {
+        width: calc(100% / 4);
+    }
+}
+@media (max-width: 992px) {
+    .parallax .box {
+        width: calc(100% / 2);
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
+@media (max-width: 768px) {
+    .parallax .box {
+        width: 100%;
+    }
+}
+.parallax .box h3 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.parallax .box p {
+    font-size: 15px;
+    font-weight: 600;
+}
+/* End Parallax */
