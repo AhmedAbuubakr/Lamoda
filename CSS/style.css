@@ -1,3 +1,7 @@
+:root {
+    --main-color: #9b0000;
+}
+/* Var */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -246,7 +250,9 @@ ul {
     }
 }
 .about .box i {
-    margin-right: 25px;
+    margin-right: 35px;
+    font-size: 35px;
+    color: var(--main-color);
 }
 .about .box .text h3 {
     font-size: 16px;
