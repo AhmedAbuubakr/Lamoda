@@ -11,7 +11,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    font-family: sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 /* Small Screen */
 @media (min-width: 767px) {
@@ -97,6 +97,7 @@ ul {
     margin-left: 5px;
     padding: 10px 10px 15px 10px;
     font-size: 15px;
+    font-weight: 600;
     position: relative;
     transition: .3s;
 }
@@ -196,6 +197,12 @@ ul {
 .landing::after {
     background: rgb(0, 0, 0, 45%);
 }
+.landing .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
 .landing .text {
     position: absolute;
     top: 50%;
@@ -206,7 +213,6 @@ ul {
     text-transform: uppercase;
     width: 100%;
     padding: 0 15px;
-    z-index: 4;
 }
 .landing .text h2 {
     font-size: 50px;
@@ -223,6 +229,7 @@ ul {
     color: #fff;
     display: block;
     width: fit-content;
+    font-weight: 500;
     padding: 8px 45px;
     margin: 0 auto;
     border-radius: 25px;
@@ -239,7 +246,6 @@ ul {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 2;
 }
 .landing .shufflle li {
     width: 6px;
@@ -253,6 +259,27 @@ ul {
 .landing .shufflle li.active,
 .landing .shufflle li:hover {
     background: #fff;
+}
+.landing .arrws {
+    display: flex;
+}
+.landing .arrws li a {
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: rgb(255, 255, 255, 70%);
+    transition: .3s;
+}
+.landing .arrws li a:hover {
+    color: #fff;
+}
+.landing .arrws li .arrw-left {
+    left: 25px;
+}
+.landing .arrws li .arrw-right {
+    right: 25px;
 }
 /* End Landing */
 /* Start About */
@@ -327,11 +354,12 @@ ul {
     flex-wrap: wrap;
     padding-top: 120px;
     padding-bottom: 120px;
+    position: relative;
+    z-index: 2;
 }
 .parallax .box {
     text-align: center;
     color: #fff;
-    z-index: 2;
 }
 @media (min-width: 991px) {
     .parallax .box {
@@ -341,8 +369,8 @@ ul {
 @media (max-width: 992px) {
     .parallax .box {
         width: calc(100% / 2);
-        margin-top: 25px;
-        margin-bottom: 25px;
+        margin-top: 35px;
+        margin-bottom: 35px;
     }
 }
 @media (max-width: 768px) {
@@ -350,8 +378,12 @@ ul {
         width: 100%;
     }
 }
+.parallax .box i {
+    font-size: 45px;
+}
 .parallax .box h3 {
     font-size: 40px;
+    margin-top: 35px;
     margin-bottom: 10px;
 }
 .parallax .box p {
@@ -423,9 +455,11 @@ ul {
 }
 .choose .info .text .options li::before {
     content: "\f058";
-    font-family: "FontAwesome 5 Free";
+    font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: 10px;
+    width: 100%;
+    height: 100%;
 }
 @media (max-width: 991px) {
     .choose .info .image {
@@ -579,7 +613,7 @@ ul {
 .timeline-content .box .text p {
     font-size: 14px;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.8;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -817,6 +851,26 @@ ul {
 }
 .team-content .box .text .social {
     display: flex;
+    margin-top: 25px;
+}
+.team-content .box .text .social li a {
+    display: block;
+    text-decoration: none;
+    color: #707070;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid #707070;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    transition: .4s;
+}
+.team-content .box .text .social li a:hover {
+    background-color: var(--main-color);
+    color: #fff;
+    border-color: transparent;
 }
 .team .shufflle {
     display: flex;
@@ -889,11 +943,11 @@ ul {
 .skills-content .box .spin {
     width: 160px;
     height: 160px;
-    border: 15px solid var(--main-color);
+    border: 15px solid #fff;
     border-radius: 50%;
     margin: 0 auto;
     font-size: 40px;
-    font-weight: 600;
+    font-weight: 700;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -901,7 +955,7 @@ ul {
 .skills-content .box .spin span {
     font-size: 18px;
     margin-top: 10px;
-    margin-left: 5px;
+    margin-left: 3px;
 }
 .skills-content .box .text {
     margin-top: 35px;
@@ -949,12 +1003,13 @@ ul {
 .services-content .box i {
     color: #fff;
     background-color: var(--main-color);
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
     display: grid;
     place-items: center;
     margin: 0 auto;
     border-radius: 50%;
+    font-size: 40px;
 }
 .services-content .box h3 {
     font-size: 15px;
@@ -1438,6 +1493,7 @@ ul {
 .copyright .social ul li a {
     text-decoration: none;
     color: rgb(255, 255, 255, 60%);
+    padding-left: 15px;
     transition: .3s;
 }
 .copyright .social ul li a:hover {
@@ -1451,7 +1507,7 @@ ul {
     right: 25px;
     text-decoration: none;
     color: #fff;
-    padding: 10px;
+    padding: 10px 15px;
     background: var(--main-color);
     z-index: 2;
     opacity: .8;
