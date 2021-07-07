@@ -1416,6 +1416,7 @@ ul {
 .contact-content form .inpts {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 @media (max-width: 991px) {
     .contact-content form .inpts {
@@ -1424,6 +1425,11 @@ ul {
 }
 .contact-content form .inpts .cont {
     flex-basis: calc(90% / 3);
+    margin-bottom: 30px;
+    position: relative;
+}
+.contact-content form .inpts .cont:last-child {
+    flex-basis: 100%;
 }
 .contact-content form .inpt-grp {
     padding: 12px;
@@ -1432,7 +1438,6 @@ ul {
     display: block;
     outline: none;
     width: 100%;
-    margin-bottom: 20px;
     transition: .3s;
     color: #fff;
 }
@@ -1445,8 +1450,27 @@ ul {
 .contact-content form .inpt-grp::placeholder {
     color: #fff;
 }
+.contact-content form .cont label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 14px;
+    color: #fff;
+    transition: .5s;
+}
+.contact-content form .cont .inpt-grp:focus ~ label,
+.contact-content form .cont .inpt-grp:valid ~ label {
+    top: -15px;
+    color: #000;
+    font-weight: 600;
+}
 .contact-content form .textarea {
     height: 180px;
+    resize: none;
+}
+.contact-content form .cont:last-child label {
+    position: absolute;
+    top: 20px;
 }
 .contact-content form .submit {
     color: #fff;
@@ -1458,7 +1482,7 @@ ul {
     cursor: pointer;
     display: block;
     margin-left: auto;
-    transition: .4s;
+    transition: .5s;
 }
 .contact-content form .submit:hover {
     border-color: #fff;
