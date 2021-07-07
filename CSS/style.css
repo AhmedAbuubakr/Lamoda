@@ -1405,8 +1405,8 @@ ul {
     margin-bottom: 60px;
 }
 .contact-content .text p {
-    line-height: 1.8;
     font-size: 18px;
+    line-height: 1.6;
 }
 .contact-content form {
     width: 800px;
@@ -1435,7 +1435,6 @@ ul {
     padding: 12px;
     background: transparent;
     border: 2px solid rgb(255, 255, 255, 50%);
-    display: block;
     outline: none;
     width: 100%;
     transition: .3s;
